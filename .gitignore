@@ -2,4 +2,5 @@
 *.o
 *.idea
 *.DS_Store
+*.git
 
