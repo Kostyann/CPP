@@ -1,0 +1,6 @@
+# ignore all .o .idea .DS_Store
+*.o
+*.idea
+*.DS_Store
+*.git
+
