@@ -11,43 +11,18 @@
 /* ************************************************************************** */
 
 #include "../include/Zombie.hpp"
-#include "../include/ZombieEvent.hpp"
-#include <stdlib.h>
-#include <time.h>
+#include "../include/ZombieHorde.hpp"
 
-static const char alpha[] =
-		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		"abcdefghijklmnopqrstuvwxyz";
-
-void	randomChump()
+void	make_horde()
 {
-	srand(time(0));
-	std::string name;
-	for (int i = 0; i < 6; ++i)
-		name += alpha[rand() % (sizeof(alpha) - 1)];
-
-	ZombieEvent event = ZombieEvent();
-	event.setZombieType("fast");
-
-	Zombie*	r = event.newZombie(name);
-	r->announce();
-
-	delete r;
+	ZombieHorde horde = ZombieHorde(77);
+	horde.announce();
 }
-
-void	zombieOnStack(std::string name, std::string type)
-{
-	Zombie z = Zombie(name, type);
-	z.announce();
-}
-
 
 int		main()
 {
-	zombieOnStack("Henry", "slow");
+	make_horde();
 
-	randomChump();
-
-//	system("leaks -q dead");
+//	system("leaks -q horde");
 	return (0);
 }

@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 11:09:14 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/02 11:09:17 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 11:02:06 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 11:02:10 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
-Zombie::Zombie(std::string name, std::string type) : name_(name), type_(type)
-{
-	return;
-}
+#include <iostream>
+#include <string>
 
-Zombie::~Zombie()
-{
-	return;
-}
+class Zombie {
 
-std::string	Zombie::getName()
-{
-	return this->name_;
-}
+public:
 
-std::string	Zombie::getType()
-{
-	return this->type_;
-}
+	Zombie(void);
+	~Zombie(void);
 
-void		Zombie::announce()
-{
-	std::cout << this->name_ << " (" << this->type_
-	<< ") says: Hungryy..gh.gh" << std::endl;
-}
+	void		setName(std::string name);
+	void		setType(std::string type);
+	std::string	getName(void);
+	std::string	getType(void);
+	void		announce(void);
+
+private:
+
+	std::string	name_;
+	std::string	type_;
+};
+
+#endif

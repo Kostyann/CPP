@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 11:09:14 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/02 11:09:17 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 12:37:06 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 12:37:10 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef ZOMBIE_HORDE_H
+# define ZOMBIE_HORDE_H
 
-Zombie::Zombie(std::string name, std::string type) : name_(name), type_(type)
-{
-	return;
-}
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <time.h>
+#include "Zombie.hpp"
 
-Zombie::~Zombie()
-{
-	return;
-}
+class ZombieHorde {
 
-std::string	Zombie::getName()
-{
-	return this->name_;
-}
+public:
 
-std::string	Zombie::getType()
-{
-	return this->type_;
-}
+	ZombieHorde(int N);
+	~ZombieHorde(void);
 
-void		Zombie::announce()
-{
-	std::cout << this->name_ << " (" << this->type_
-	<< ") says: Hungryy..gh.gh" << std::endl;
-}
+	void		announce(void);
+
+private:
+
+	int const Nzomb_;
+	Zombie* Horde;
+};
+
+#endif

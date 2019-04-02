@@ -12,7 +12,7 @@
 
 #include "../include/Zombie.hpp"
 
-Zombie::Zombie(std::string name, std::string type) : name_(name), type_(type)
+Zombie::Zombie()
 {
 	return;
 }
@@ -20,6 +20,16 @@ Zombie::Zombie(std::string name, std::string type) : name_(name), type_(type)
 Zombie::~Zombie()
 {
 	return;
+}
+
+void		Zombie::setName(std::string name)
+{
+	this->name_ = name;
+}
+
+void		Zombie::setType(std::string type)
+{
+	this->type_ = type;
 }
 
 std::string	Zombie::getName()
