@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pbook.hpp                                          :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 16:54:45 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/01 16:55:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 15:56:41 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 15:56:45 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PBOOK_H
-# define PBOOK_H
+#ifndef HUMAN_H
+# define HUMAN_H
 
-#include "Contact.hpp"
+#include <iostream>
+#include <string>
+#include "Brain.hpp"
 
-void	add(Contact *contacts);
-void	search(Contact *contacts);
+class Human {
+
+public:
+
+	Human();
+	~Human();
+
+	void		setName(std::string name);
+	std::string	getName() const;
+	Brain		&getBrain();
+
+	std::string identify() const;
+
+private:
+
+	Brain		myBrain_;
+	std::string name_;
+};
 
 #endif

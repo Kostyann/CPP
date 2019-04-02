@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pbook.hpp                                          :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 16:54:45 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/01 16:55:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 15:34:37 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 15:34:40 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PBOOK_H
-# define PBOOK_H
+#include <iostream>
+#include <string>
 
-#include "Contact.hpp"
+int main()
+{
+	std::string str = "HI THIS IS BRAIN";
+	std::string *pstr = &str;
+	std::string &ref_str = str;
 
-void	add(Contact *contacts);
-void	search(Contact *contacts);
+	std::cout << *pstr << std::endl;
+	std::cout << ref_str << std::endl;
 
-#endif
+	return (0);
+}

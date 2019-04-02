@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pbook
+NAME = violence
 
 CC =		c++
 CFLAGS =	-Wall -Wextra -Werror -std=c++98 -pedantic
@@ -19,7 +19,7 @@ SRC_DIR = src/
 OBJ_DIR =	obj/
 INCL_DIR = include/
 
-SRC =		main.cpp add.cpp search.cpp Contact.cpp
+SRC =		main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ =		$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
 .PHONY: all clean fclean re

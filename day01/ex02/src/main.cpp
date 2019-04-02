@@ -19,9 +19,9 @@ static const char alpha[] =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		"abcdefghijklmnopqrstuvwxyz";
 
-void	randomChump()
+void	randomChump(int random)
 {
-	srand(time(0));
+	srand(time(0) + random);
 	std::string name;
 	for (int i = 0; i < 6; ++i)
 		name += alpha[rand() % (sizeof(alpha) - 1)];
@@ -46,7 +46,9 @@ int		main()
 {
 	zombieOnStack("Henry", "slow");
 
-	randomChump();
+	randomChump(rand());
+	randomChump(rand());
+	randomChump(rand());
 
 //	system("leaks -q dead");
 	return (0);

@@ -5,26 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 11:19:26 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/02 11:19:29 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 18:50:41 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 18:50:43 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
-#include "../include/ZombieHorde.hpp"
+#include "../include/Weapon.hpp"
+#include "../include/HumanA.hpp"
+#include "../include/HumanB.hpp"
 
-void	make_horde()
-{
-	ZombieHorde horde1 = ZombieHorde(-13);
-	horde1.announce();
-	ZombieHorde horde2 = ZombieHorde(13);
-	horde2.announce();
-}
+int main() {
+	{
+		Weapon        club = Weapon("crude spiked club");
 
-int		main()
-{
-	make_horde();
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon        club = Weapon("crude spiked club");
 
-//	system("leaks -q horde");
-	return (0);
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

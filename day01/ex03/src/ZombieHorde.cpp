@@ -19,7 +19,8 @@ static const char alpha[] =
 ZombieHorde::ZombieHorde(int N) : Nzomb_(N)
 {
 	std::string name;
-	this->Horde = new Zombie[Nzomb_];
+	if (Nzomb_ > 0)
+		this->Horde = new Zombie[Nzomb_];
 
 	for (int i = 0; i < Nzomb_; i++)
 	{
@@ -34,7 +35,8 @@ ZombieHorde::ZombieHorde(int N) : Nzomb_(N)
 
 ZombieHorde::~ZombieHorde()
 {
-	delete [] this->Horde;
+	if (Nzomb_ > 0)
+		delete [] this->Horde;
 	return;
 }
 

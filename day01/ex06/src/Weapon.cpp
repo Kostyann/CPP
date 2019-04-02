@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pbook.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 16:54:45 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/01 16:55:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 18:50:31 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 18:50:33 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PBOOK_H
-# define PBOOK_H
+#include "../include/Weapon.hpp"
 
-#include "Contact.hpp"
+Weapon::Weapon()
+{
+	return;
+}
 
-void	add(Contact *contacts);
-void	search(Contact *contacts);
+Weapon::Weapon(std::string type) : type_(type)
+{
+	return;
+}
 
-#endif
+Weapon::~Weapon()
+{
+	return;
+}
+
+void		Weapon::setType(std::string type)
+{
+	this->type_ = type;
+}
+
+std::string	&Weapon::getType()
+{
+	return this->type_;
+}

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pbook.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 16:54:45 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/01 16:55:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/02 15:54:59 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/02 15:55:02 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PBOOK_H
-# define PBOOK_H
+#include "../include/Human.hpp"
 
-#include "Contact.hpp"
+int main()
+{
+	Human bob;
 
-void	add(Contact *contacts);
-void	search(Contact *contacts);
-
-#endif
+	std::cout << bob.identify() << std::endl;
+	std::cout << bob.getBrain().identify() << std::endl;
+}

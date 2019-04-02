@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pbook.hpp                                          :+:      :+:    :+:   */
+/*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 16:54:45 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/01 16:55:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/01 15:18:16 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/01 15:18:22 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PBOOK_H
-# define PBOOK_H
+#include "../include/pbook.hpp"
 
-#include "Contact.hpp"
+Contact::Contact() {
+	return;
+}
 
-void	add(Contact *contacts);
-void	search(Contact *contacts);
+Contact::~Contact() {
+	return;
+}
 
-#endif
+int	Contact::getNcont(void) {
+	return Contact::ncont_;
+}
+
+void	Contact::incrNcont(void) {
+	Contact::ncont_++;
+}
+
+int Contact::ncont_ = 0;
