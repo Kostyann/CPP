@@ -64,13 +64,29 @@ float		Fixed::toFloat() const
 	return (float)this->raw_ / (1 << bits_);
 }
 
+Fixed & Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a < b) ? a : b;
+}
 
+Fixed& Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a > b) ? a : b;
+}
+
+const Fixed & Fixed::min(Fixed const & a, Fixed const & b)
+{
+	return (a < b) ? a : b;
+}
+
+const Fixed & Fixed::max(Fixed const & a, Fixed const & b)
+{
+	return (a > b) ? a : b;
+}
 
 
 Fixed & 	Fixed::operator=(Fixed const &rhs)
 {
-	std::cout << "Assignment operator called" << std::endl;
-
 	if(this != &rhs)
 		this->raw_ = rhs.getRawBits();
 
