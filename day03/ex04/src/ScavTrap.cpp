@@ -14,14 +14,14 @@
 
 ScavTrap::ScavTrap(void):ClapTrap()
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 50;
-	ClapTrap::max_energy_ = 50;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 20;
-	ClapTrap::range_damage_ = 15;
-	ClapTrap::armor_ = 3;
+	this->hp_ = 100;
+	this->max_hp_ = 100;
+	this->energy_ = 50;
+	this->max_energy_ = 50;
+	this->level_ = 1;
+	this->melee_damage_ = 20;
+	this->range_damage_ = 15;
+	this->armor_ = 3;
 	std::cout << "Sc4V-TP initialized, says: alive? again? Nooooo!"
 			  << std::endl;
 	return;
@@ -29,15 +29,16 @@ ScavTrap::ScavTrap(void):ClapTrap()
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 50;
-	ClapTrap::max_energy_ = 50;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 20;
-	ClapTrap::range_damage_ = 15;
-	ClapTrap::armor_ = 3;
-	std::cout << "Sc4V-TP initialized, says: alive? again? Nooooo!"
+	this->name_ = name;
+	this->hp_ = 100;
+	this->max_hp_ = 100;
+	this->energy_ = 50;
+	this->max_energy_ = 50;
+	this->level_ = 1;
+	this->melee_damage_ = 20;
+	this->range_damage_ = 15;
+	this->armor_ = 3;
+	std::cout << "Sc4V-TP (" << this->name_ << ") initialized, says: alive? again? Nooooo!"
 			  << std::endl;
 	return;
 }

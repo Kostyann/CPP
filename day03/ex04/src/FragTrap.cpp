@@ -14,14 +14,14 @@
 
 FragTrap::FragTrap(void):ClapTrap()
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 100;
-	ClapTrap::max_energy_ = 100;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 30;
-	ClapTrap::range_damage_ = 20;
-	ClapTrap::armor_ = 5;
+	this->hp_ = 100;
+	this->max_hp_ = 100;
+	this->energy_ = 100;
+	this->max_energy_ = 100;
+	this->level_ = 1;
+	this->melee_damage_ = 30;
+	this->range_damage_ = 20;
+	this->armor_ = 5;
 	std::cout << "FR4G-TP initialized, ready to eke out a miserable existence"
 			  << std::endl;
 	return;
@@ -29,15 +29,16 @@ FragTrap::FragTrap(void):ClapTrap()
 
 FragTrap::FragTrap(std::string name):ClapTrap(name)
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 30;
-	ClapTrap::range_damage_ = 20;
-	ClapTrap::armor_ = 5;
-	std::cout << "FR4G-TP initialized, ready to eke out a miserable existence"
+	this->name_ = name;
+	this->hp_ = 100;
+	this->max_hp_ = 100;
+	this->energy_ = 100;
+	this->max_energy_ = 100;
+	this->level_ = 1;
+	this->melee_damage_ = 30;
+	this->range_damage_ = 20;
+	this->armor_ = 5;
+	std::cout << "FR4G-TP (" << this->name_ << ") initialized, ready to eke out a miserable existence"
 	<< std::endl;
 	return;
 }

@@ -12,20 +12,16 @@
 
 #include "../include/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): name_("noname"), hp_(0), max_hp_(0),
-						  energy_(0), max_energy_(0), level_(1),
-						  melee_damage_(0), range_damage_(0), armor_(0)
+ClapTrap::ClapTrap(void): level_(1)
 {
 	std::cout << "CL^P-TP initialized, M@TH=F*CK(R$"
 			  << std::endl;
 	return;
 }
 
-ClapTrap::ClapTrap(std::string name): name_(name), hp_(0), max_hp_(0),
-									  energy_(0), max_energy_(0), level_(1),
-									  melee_damage_(0), range_damage_(0), armor_(0)
+ClapTrap::ClapTrap(std::string name): name_(name),  level_(1)
 {
-	std::cout << "CL^P-TP initialized, M@TH=F*CK(R$"
+	std::cout << "CL^P-TP (" << this->name_ << ") initialized, M@TH=F*CK(R$"
 			  << std::endl;
 	return;
 }

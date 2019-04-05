@@ -23,6 +23,7 @@ int	main()
 	std::cout << *zaz;
 
 	Enemy* b = new RadScorpion();
+	Enemy* a = new SuperMutant();
 
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
@@ -39,6 +40,40 @@ int	main()
 	std::cout << *zaz;
 	zaz->attack(b);
 	std::cout << *zaz;
+
+	std::cout << "--------------------------" << std::endl;
+
+	zaz->attack(b);
+	std::cout << *zaz;
+	zaz->attack(b);
+	std::cout << *zaz;
+
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->recoverAP();
+	zaz->recoverAP();
+	zaz->recoverAP();
+	zaz->recoverAP();
+	std::cout << *zaz;
+
+	zaz->equip(pf);
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+	zaz->attack(a);
+	std::cout << *zaz;
+
 
 	return (0);
 }

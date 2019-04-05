@@ -30,6 +30,12 @@ public:
 
 	void	vaulthunter_dot_exe(std::string const & target);
 
+protected:
+
+	unsigned int	energy_;
+	unsigned int	max_energy_;
+	unsigned int	melee_damage_;
+
 };
 
 #endif

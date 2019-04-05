@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 19:05:03 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/04 19:05:06 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/05 19:13:57 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/05 19:14:01 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPER_TRAP_H
-# define SUPER_TRAP_H
+#ifndef ISPACE_MARINE_H
+# define ISPACE_MARINE_H
 
-#include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
+#include <iostream>
+#include <string>
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+class ISpaceMarine {
 
 public:
 
-	SuperTrap(void);
-	SuperTrap(std::string name);
-	SuperTrap(SuperTrap const & src);
-	SuperTrap &	operator=(SuperTrap const & rhs);
-	~SuperTrap(void);
-
-	void	rangedAttack(std::string const & target);
-	void	meleeAttack(std::string const & target);
-
-};
+	virtual ~ISpaceMarine() {}
+	virtual ISpaceMarine* clone() const = 0;
+	virtual void battleCry() const = 0;
+	virtual void rangedAttack() const = 0;
+	virtual void meleeAttack() const = 0;
+}
 
 #endif

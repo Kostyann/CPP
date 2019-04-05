@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   TacticalMarine.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 19:05:03 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/04 19:05:06 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/05 19:11:55 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/05 19:11:57 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPER_TRAP_H
-# define SUPER_TRAP_H
+#include "../include/TacticalMarine.hpp"
 
-#include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
+TacticalMarine::TacticalMarine()
+{
+	return;
+}
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+TacticalMarine::TacticalMarine(TacticalMarine const &src)
+{
+	*this = src;
+	return ;
+}
 
-public:
+TacticalMarine & 	TacticalMarine::operator=(TacticalMarine const &rhs)
+{
+	if(this != &rhs)
+	{
 
-	SuperTrap(void);
-	SuperTrap(std::string name);
-	SuperTrap(SuperTrap const & src);
-	SuperTrap &	operator=(SuperTrap const & rhs);
-	~SuperTrap(void);
+	}
+	return *this;
+}
 
-	void	rangedAttack(std::string const & target);
-	void	meleeAttack(std::string const & target);
+TacticalMarine::~TacticalMarine()
+{
+	return;
+}
 
-};
-
-#endif

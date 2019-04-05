@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 19:05:03 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/04 19:05:06 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/05 19:12:57 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/05 19:12:58 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SUPER_TRAP_H
-# define SUPER_TRAP_H
+#ifndef SQUAD_H
+# define SQUAD_H
 
-#include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "ISquad.hpp"
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+class Squad : public ISquad {
 
 public:
 
-	SuperTrap(void);
-	SuperTrap(std::string name);
-	SuperTrap(SuperTrap const & src);
-	SuperTrap &	operator=(SuperTrap const & rhs);
-	~SuperTrap(void);
+	Squad(void);
+	Squad(Squad const & src);
+	Squad &	operator=(Squad const & rhs);
+	~Squad(void);
 
-	void	rangedAttack(std::string const & target);
-	void	meleeAttack(std::string const & target);
+	int getCount() const;
+	ISpaceMarine *getUnit(int) const;
+	int push(ISpaceMarine *);
 
-};
+private:
+
+	int		count_;
+
+}
 
 #endif

@@ -14,14 +14,14 @@
 
 NinjaTrap::NinjaTrap(void):ClapTrap()
 {
-	ClapTrap::hp_ = 60;
-	ClapTrap::max_hp_ = 60;
-	ClapTrap::energy_ = 120;
-	ClapTrap::max_energy_ = 120;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 60;
-	ClapTrap::range_damage_ = 5;
-	ClapTrap::armor_ = 0;
+	this->hp_ = 60;
+	this->max_hp_ = 60;
+	this->energy_ = 120;
+	this->max_energy_ = 120;
+	this->level_ = 1;
+	this->melee_damage_ = 60;
+	this->range_damage_ = 5;
+	this->armor_ = 0;
 	std::cout << "N9nja-TP initialized, piu, piu!"
 			  << std::endl;
 	return;
@@ -29,15 +29,16 @@ NinjaTrap::NinjaTrap(void):ClapTrap()
 
 NinjaTrap::NinjaTrap(std::string name):ClapTrap(name)
 {
-	ClapTrap::hp_ = 60;
-	ClapTrap::max_hp_ = 60;
-	ClapTrap::energy_ = 120;
-	ClapTrap::max_energy_ = 120;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 60;
-	ClapTrap::range_damage_ = 5;
-	ClapTrap::armor_ = 0;
-	std::cout << "N9nja-TP initialized, piu, piu!"
+	this->name_ = name;
+	this->hp_ = 60;
+	this->max_hp_ = 60;
+	this->energy_ = 120;
+	this->max_energy_ = 120;
+	this->level_ = 1;
+	this->melee_damage_ = 60;
+	this->range_damage_ = 5;
+	this->armor_ = 0;
+	std::cout << "N9nja-TP (" << this->name_ << ") initialized, piu, piu!"
 			  << std::endl;
 	return;
 }

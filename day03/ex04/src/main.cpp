@@ -17,18 +17,10 @@
 
 int		main()
 {
-	FragTrap trap2 = FragTrap("Frank");
-	FragTrap trap1 = FragTrap(trap2);
-	FragTrap trap = trap1;
-	ScavTrap strap = ScavTrap("Willie");
-	ClapTrap ctrap = ClapTrap();
-	NinjaTrap ntrap = NinjaTrap();
-	SuperTrap superTrap = SuperTrap("JACKIE CHAN");
-
-
-	std::cout << "--------------------------------------" << std::endl;
 
 	// FragTrap
+
+	FragTrap trap = FragTrap("Frank");
 
 	trap.rangedAttack("random");
 	trap.meleeAttack("bear");
@@ -48,6 +40,8 @@ int		main()
 
 	// ScavTrap
 
+	ScavTrap strap = ScavTrap("Willie");
+
 	strap.rangedAttack("random");
 	strap.meleeAttack("bear");
 	strap.takeDamage(106);
@@ -65,6 +59,8 @@ int		main()
 
 	// ClapTrap
 
+	ClapTrap ctrap = ClapTrap();
+
 	ctrap.rangedAttack("random");
 	ctrap.meleeAttack("bear");
 	ctrap.takeDamage(106);
@@ -75,6 +71,8 @@ int		main()
 
 	// NinjaTrap
 
+	NinjaTrap ntrap = NinjaTrap("Superninja");
+
 	ntrap.ninjaShoebox(trap);
 	ntrap.ninjaShoebox(ctrap);
 	ntrap.ninjaShoebox(strap);
@@ -83,6 +81,8 @@ int		main()
 	std::cout << "--------------------------------------" << std::endl;
 
 	// SuperTrap
+
+	SuperTrap superTrap = SuperTrap("JACKIE CHAN");
 
 	superTrap.rangedAttack("random");
 	superTrap.meleeAttack("bear");

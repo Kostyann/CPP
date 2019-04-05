@@ -12,32 +12,16 @@
 
 #include "../include/SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void):FragTrap(), NinjaTrap()
+SuperTrap::SuperTrap(void): FragTrap(), NinjaTrap()
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 120;
-	ClapTrap::max_energy_ = 120;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 60;
-	ClapTrap::range_damage_ = 20;
-	ClapTrap::armor_ = 5;
 	std::cout << "SUP{R-TP initialized, DESTROY!"
 			  << std::endl;
 	return;
 }
 
-SuperTrap::SuperTrap(std::string name):FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name): FragTrap(name), NinjaTrap(name)
 {
-	ClapTrap::hp_ = 100;
-	ClapTrap::max_hp_ = 100;
-	ClapTrap::energy_ = 120;
-	ClapTrap::max_energy_ = 120;
-	ClapTrap::level_ = 1;
-	ClapTrap::melee_damage_ = 60;
-	ClapTrap::range_damage_ = 20;
-	ClapTrap::armor_ = 5;
-	std::cout << "SUP{R-TP initialized, DESTROY!"
+	std::cout << "SUP{R-TP (" << this->name_ << ") initialized, DESTROY!"
 			  << std::endl;
 	return;
 }

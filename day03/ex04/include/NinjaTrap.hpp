@@ -35,6 +35,13 @@ public:
 	void	ninjaShoebox(ScavTrap const &);
 	void	ninjaShoebox(NinjaTrap const &);
 
+protected:
+
+	unsigned int	hp_;
+	unsigned int	max_hp_;
+	unsigned int	range_damage_;
+	unsigned int	armor_;
+
 };
 
 #endif
