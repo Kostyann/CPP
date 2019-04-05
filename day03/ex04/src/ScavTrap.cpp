@@ -71,6 +71,20 @@ ScavTrap::~ScavTrap()
 	return;
 }
 
+void	ScavTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "Sc4V-TP " << this->name_ << " attacks " << target <<
+			  " at range of few feats, doing " << this->range_damage_ <<
+			  " of pain !" << std::endl;
+}
+
+void	ScavTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "Sc4V-TP " << this->name_ << " hits " << target <<
+			  " with a rock, as hard as " << this->melee_damage_
+			  << " points of damage !" << std::endl;
+}
+
 void	ScavTrap::mindChallenge(const std::string &target)
 {
 	std::cout << target << " you came to the gate keeper Sc4V-TP, named "

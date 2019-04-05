@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-class SuperTrap : public FragTrap, public NinjaTrap {
+class SuperTrap : virtual public FragTrap, virtual public NinjaTrap {
 
 public:
 
@@ -26,10 +26,8 @@ public:
 	SuperTrap &	operator=(SuperTrap const & rhs);
 	~SuperTrap(void);
 
-	void	ninjaShoebox(ClapTrap const &);
-	void	ninjaShoebox(FragTrap const &);
-	void	ninjaShoebox(ScavTrap const &);
-	void	ninjaShoebox(NinjaTrap const &);
+	void	rangedAttack(std::string const & target);
+	void	meleeAttack(std::string const & target);
 
 };
 

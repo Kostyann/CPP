@@ -72,6 +72,20 @@ FragTrap::~FragTrap()
 	return;
 }
 
+void	FragTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->name_ << " attacks " << target <<
+			  " from far far away, dealing " << this->range_damage_ <<
+			  " points of trouble !" << std::endl;
+}
+
+void	FragTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "FR4G-TP " << this->name_ << " hits " << target <<
+			  " right in the face, and does " << this->melee_damage_
+			  << " points of damage !" << std::endl;
+}
+
 void	FragTrap::vaulthunter_dot_exe(const std::string &target)
 {
 	typedef  void (ClapTrap::*AttackFn)(const std::string &target);

@@ -61,16 +61,16 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::rangedAttack(const std::string &target)
 {
-	std::cout << "CL^P-TP " << this->name_ << " attacks " << target <<
-			  " from distance, as a coward,  causing " << this->range_damage_ <<
-			  " points of trouble !" << std::endl;
+	std::cout << "CL^P-TP " << this->name_ <<
+	" can't attack from distance, even if " << target <<
+	" is the target" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(const std::string &target)
 {
-	std::cout << "CL^P-TP " << this->name_ << " hits " << target <<
-			  " with his bare hands, forcing him to accept " << this->melee_damage_
-			  << " points of damage !" << std::endl;
+	std::cout << "CL^P-TP " << this->name_ <<
+	" can't attack up close either, even though he hates " << target <<
+	" with all of his existence" << std::endl;
 }
 
 void	ClapTrap::gasAttack(const std::string &target)

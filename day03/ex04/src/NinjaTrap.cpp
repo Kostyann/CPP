@@ -71,6 +71,20 @@ NinjaTrap::~NinjaTrap()
 	return;
 }
 
+void	NinjaTrap::rangedAttack(const std::string &target)
+{
+	std::cout << "N9nja-TP " << this->name_ << " attacks " << target <<
+	" from distance, as a coward,  causing " << this->range_damage_ <<
+	" points of trouble !" << std::endl;
+}
+
+void	NinjaTrap::meleeAttack(const std::string &target)
+{
+	std::cout << "N9nja-TP " << this->name_ << " hits " << target <<
+	" with his bare hands, forcing him to accept " << this->melee_damage_
+	<< " points of damage !" << std::endl;
+}
+
 void	NinjaTrap::ninjaShoebox(ClapTrap const &)
 {
 	std::cout << "Ninja (" << this->name_ << ") says hello to unknown CL^P-TP"
