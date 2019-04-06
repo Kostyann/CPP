@@ -14,6 +14,7 @@
 
 TacticalMarine::TacticalMarine()
 {
+	std::cout << "Tactical Marine ready for battle" << std::endl;
 	return;
 }
 
@@ -23,17 +24,35 @@ TacticalMarine::TacticalMarine(TacticalMarine const &src)
 	return ;
 }
 
-TacticalMarine & 	TacticalMarine::operator=(TacticalMarine const &rhs)
+TacticalMarine & 	TacticalMarine::operator=(TacticalMarine const &)
 {
-	if(this != &rhs)
-	{
-
-	}
 	return *this;
 }
 
 TacticalMarine::~TacticalMarine()
 {
+	std::cout << "Aaaargh ..." << std::endl;
 	return;
+}
+
+ISpaceMarine	*TacticalMarine::clone() const
+{
+	ISpaceMarine *new_m = new TacticalMarine(*this);
+	return new_m;
+}
+
+void			TacticalMarine::battleCry() const
+{
+	std::cout << "For the holy PLOT !" << std::endl;
+}
+
+void			TacticalMarine::rangedAttack() const
+{
+	std::cout << "* attacks with bolter *" << std::endl;
+}
+
+void			TacticalMarine::meleeAttack() const
+{
+	std::cout << "* attacks with chainsword *" << std::endl;
 }
 

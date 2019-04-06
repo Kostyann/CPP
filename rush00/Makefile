@@ -10,16 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = squad
+NAME = game
 
 CC =		c++
-CFLAGS =	-Wall -Wextra -Werror -std=c++98 -pedantic
+CFLAGS =	-Wall #-Wextra -Werror -std=c++98 -pedantic
 
 SRC_DIR = src/
 OBJ_DIR =	obj/
 INCL_DIR = include/
 
-SRC =		main.cpp Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp
+SRC =		main.cpp Visual.cpp
 OBJ =		$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
 .PHONY: all clean fclean re
@@ -28,7 +28,7 @@ all:		$(NAME)
 	@:
 
 $(NAME):	$(OBJ)
-	@$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
+	@$(CC) -o $(NAME) $(OBJ) -l ncurses -lpanel $(CFLAGS)
 	@echo "\033[34mCompiled successfully!\033[0m"
 
 $(OBJ):		| $(OBJ_DIR)

@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
+/*   Visual.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 19:13:57 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/05 19:14:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/06 13:47:54 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/06 13:47:55 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISPACE_MARINE_H
-# define ISPACE_MARINE_H
+#include "../include/Visual.hpp"
 
-#include <iostream>
-#include <string>
+Visual::Visual()//: object_(0)
+{
+	return;
+}
 
-class ISpaceMarine {
+/*Visual::Visual(Object *object): object_(object)
+{
+	return ;
+} */
 
-public:
+Visual::Visual(Visual const &src)
+{
+	*this = src;
+	return ;
+}
 
-	virtual ~ISpaceMarine() {}
-	virtual ISpaceMarine* clone() const = 0;
-	virtual void battleCry() const = 0;
-	virtual void rangedAttack() const = 0;
-	virtual void meleeAttack() const = 0;
-};
+Visual & 	Visual::operator=(Visual const &rhs)
+{
+	if(this != &rhs)
+	{
+	//	this->object_ = object_;
+	}
+	return *this;
+}
 
-#endif
+Visual::~Visual()
+{
+	return;
+}

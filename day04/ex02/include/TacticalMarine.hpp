@@ -29,6 +29,6 @@ public:
 	void rangedAttack() const;
 	void meleeAttack() const;
 
-}
+};
 
 #endif

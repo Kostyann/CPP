@@ -14,6 +14,12 @@
 # define SQUAD_H
 
 #include "ISquad.hpp"
+#include "ISpaceMarine.hpp"
+
+struct s_squad {
+	ISpaceMarine	*marine;
+	s_squad			*next;
+};
 
 class Squad : public ISquad {
 
@@ -31,7 +37,9 @@ public:
 private:
 
 	int		count_;
+	s_squad	*head;
+	s_squad	*tail;
 
-}
+};
 
 #endif

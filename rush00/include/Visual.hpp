@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
+/*   Visual.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 19:13:57 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/05 19:14:01 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/06 13:27:36 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/06 13:27:38 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISPACE_MARINE_H
-# define ISPACE_MARINE_H
+#ifndef VISUAL_H
+# define VISUAL_H
 
 #include <iostream>
 #include <string>
+#include <ncurses.h>
 
-class ISpaceMarine {
+class Visual {
 
 public:
 
-	virtual ~ISpaceMarine() {}
-	virtual ISpaceMarine* clone() const = 0;
-	virtual void battleCry() const = 0;
-	virtual void rangedAttack() const = 0;
-	virtual void meleeAttack() const = 0;
+	Visual(void);
+//	Visual(Object *);
+	Visual(Visual const &src);
+	Visual &operator=(Visual const &rhs);
+	~Visual(void);
+
+private:
+
+//	Object *object_;
 };
 
 #endif
