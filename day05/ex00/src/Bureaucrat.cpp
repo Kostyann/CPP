@@ -22,13 +22,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade): name_(name), grade_(grade)
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src): name_("unknown"){*this = src;}
+Bureaucrat::Bureaucrat(Bureaucrat const &src): name_(src.name_){*this = src;}
 
 Bureaucrat &	Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if(this != &rhs)
 	{
-		this->name_ = rhs.name_;
 		this->grade_ = rhs.grade_;
 	}
 	return *this;

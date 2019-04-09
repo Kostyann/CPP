@@ -45,7 +45,7 @@ public:
 private:
 
 	Bureaucrat(void);
-	std::string	name_;
+	std::string	const name_;
 	int			grade_;
 };
 

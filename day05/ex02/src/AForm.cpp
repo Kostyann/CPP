@@ -12,7 +12,7 @@
 
 #include "../include/AForm.hpp"
 
-AForm::AForm(): name_("unknown"), signed_(0){}
+AForm::AForm(): name_("unknown"), signed_(0), grade_sign_(0), grade_exec_(0){}
 
 AForm::AForm(std::string name, int grade_sign, int grade_exec):
 name_(name), signed_(0), grade_sign_(grade_sign), grade_exec_(grade_exec)
@@ -23,16 +23,14 @@ name_(name), signed_(0), grade_sign_(grade_sign), grade_exec_(grade_exec)
 		throw GradeTooLowException();
 }
 
-AForm::AForm(AForm const &src){*this = src;}
+AForm::AForm(AForm const &src): name_(src.name_), grade_sign_(src.grade_sign_),
+grade_exec_(src.grade_exec_){*this = src;}
 
 AForm &	AForm::operator=(AForm const &rhs)
 {
 	if(this != &rhs)
 	{
-		this->name_ = rhs.name_;
 		this->signed_ = rhs.signed_;
-		this->grade_sign_ = rhs.grade_sign_;
-		this->grade_exec_ = rhs.grade_exec_;
 	}
 	return *this;
 }

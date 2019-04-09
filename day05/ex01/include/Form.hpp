@@ -49,10 +49,10 @@ public:
 private:
 
 	Form(void);
-	std::string	name_;
-	bool		signed_;
-	int			grade_sign_;
-	int			grade_exec_;
+	std::string	const	name_;
+	bool				signed_;
+	int 		const	grade_sign_;
+	int			const	grade_exec_;
 };
 
 std::ostream &  operator<<(std::ostream & o, Form const & i);

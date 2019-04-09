@@ -49,8 +49,8 @@ public:
 private:
 
 	Bureaucrat(void);
-	std::string	name_;
-	int			grade_;
+	std::string	const	name_;
+	int					grade_;
 };
 
 std::ostream &  operator<<(std::ostream & o, Bureaucrat const & i);
