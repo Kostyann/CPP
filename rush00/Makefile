@@ -1,50 +1,45 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/01 10:31:48 by kmerkulo          #+#    #+#              #
-#    Updated: 2019/04/01 10:31:50 by kmerkulo         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = ft_retro
+SRC_DIR = ./src/
+INC_DIR = ./include/
+CLASS_DIR = ./classes/
+# BIN_DIR = ./objects/
+ERRFL = -Wall -Wextra -Werror
 
-NAME = game
+CUR_FLAG =  -lncurses
 
-CC =		c++
-CFLAGS =	-Wall #-Wextra -Werror -std=c++98 -pedantic
+CLASS = Enemy.class.cpp \
+		Player.class.cpp \
+		Musor.class.cpp \
+		Bullet.class.cpp \
+		Visual.class.cpp \
+		Entity.class.cpp \
+		Boss.class.cpp \
 
-SRC_DIR = src/
-OBJ_DIR =	obj/
-INCL_DIR = include/
+SRC = main.cpp \
 
-SRC =		main.cpp Visual.cpp
-OBJ =		$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
-.PHONY: all clean fclean re
+INCLUDES = ./Visual.class.hpp
 
-all:		$(NAME)
-	@:
+SRCD = $(addprefix $(SRC_DIR), $(SRC))
+INCD = $(addprefix $(CLASS_DIR), $(INCLUDES))
+CLASSD = $(addprefix $(CLASS_DIR), $(CLASS))
+# BIND = $(addprefix $(BIN_DIR), $(BIN))
 
-$(NAME):	$(OBJ)
-	@$(CC) -o $(NAME) $(OBJ) -l ncurses -lpanel $(CFLAGS)
-	@echo "\033[34mCompiled successfully!\033[0m"
+BIN =  $(CLASSD:.cpp=.o) $(SRCD:.cpp=.o)
 
-$(OBJ):		| $(OBJ_DIR)
+all: $(NAME)
 
-$(OBJ_DIR):
-	@mkdir $(OBJ_DIR)
+$(NAME): $(BIN) 
+	clang++ $(ERRFL) -o $(NAME) $(BIN) $(CUR_FLAG)
 
-$(OBJ_DIR)%.o:	$(SRC_DIR)%.cpp $(INCL_DIR)*.hpp
-	@echo "\033[33mCompiling $<...\033[0m"
-	@$(CC) -c $< -o $@ $(CFLAGS)
+%.o: %.cpp $(INCD)
+	clang++ $(ERRFL) -o $@ -c $< -I $(CLASS_DIR)
 
 clean:
-	@rm -rf $(OBJ_DIR)
-	@echo "\033[32mCleaned!\033[0m"
+	@/bin/rm -f $(BIN)
+	@/bin/rm -f *~
 
-fclean:		clean
-	@rm -f $(NAME)
+fclean: clean
+	@/bin/rm -f $(NAME)
 
-re:			fclean all
+re: fclean all

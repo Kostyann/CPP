@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Musor.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abulakh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/06 13:00:08 by abulakh           #+#    #+#             */
-/*   Updated: 2019/04/06 13:00:10 by abulakh          ###   ########.fr       */
+/*   Created: 2019/04/06 13:44:46 by abulakh           #+#    #+#             */
+/*   Updated: 2019/04/06 13:44:48 by abulakh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MUSOR_CLASS_HPP
+# define MUSOR_CLASS_HPP
 
-#include "Visual.class.hpp"
+# include "Entity.class.hpp"
 
-int main(void)
+class Musor : public Entity
 {
-	system("printf '\e[8;60;220t'");
-	Visual game;
-	srand(time(NULL));
-	game.game_mode();
-	return(0);
-}
+	public:
+		Musor(unsigned int);
+		Musor(Musor const & src);
+		Musor(void);
+		~Musor(void);
+
+		Musor &	operator=(Musor const & rhs);
+
+		std::string model;
+};
+
+#endif
+

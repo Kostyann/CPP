@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Visual.hpp                                         :+:      :+:    :+:   */
+/*   ShrubberyCreationShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmerkulo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/06 13:27:36 by kmerkulo          #+#    #+#             */
-/*   Updated: 2019/04/06 13:27:38 by kmerkulo         ###   ########.fr       */
+/*   Created: 2019/04/09 11:24:36 by kmerkulo          #+#    #+#             */
+/*   Updated: 2019/04/09 11:24:37 by kmerkulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VISUAL_H
-# define VISUAL_H
+#ifndef SHRUBERRY_CREATION_FORM_H
+# define SHRUBERRY_CREATION_FORM_H
 
 #include <iostream>
 #include <string>
-#include <ncurses.h>
+#include <fstream>
+#include "AForm.hpp"
 
-class Visual {
+class ShrubberyCreationForm : public AForm {
 
 public:
 
-	Visual(void);
-//	Visual(Object *);
-	Visual(Visual const &src);
-	Visual &operator=(Visual const &rhs);
-	~Visual(void);
+	ShrubberyCreationForm(std::string);
+	ShrubberyCreationForm(ShrubberyCreationForm const &);
+	ShrubberyCreationForm &	  operator=(ShrubberyCreationForm const &);
+	~ShrubberyCreationForm(void);
+
+	void	execute(Bureaucrat const &) const;
 
 private:
 
-//	Object *object_;
+	ShrubberyCreationForm(void);
+	std::string target_;
+
 };
 
 #endif
+

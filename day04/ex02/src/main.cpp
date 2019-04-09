@@ -30,7 +30,7 @@ int main()
 		cur->meleeAttack();
 	}
 
-/*	std::cout << "---------------------------" << std::endl;
+	std::cout << "---------------------------" << std::endl;
 
 	ISpaceMarine* kik = new TacticalMarine;
 	ISpaceMarine* yoyo = kik->clone();
@@ -56,7 +56,7 @@ int main()
 
 	std::cout << "---------------------------" << std::endl;
 
-	delete mine;  */
+	delete mine;
 
 
 	delete vlc;

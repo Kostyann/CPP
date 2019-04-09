@@ -36,7 +36,7 @@ Squad & 	Squad::operator=(Squad const &rhs)
 			this->count_--;
 		}
 		for (int i = 0; i < rhs.getCount(); i++)
-			this->push(rhs.getUnit(i));
+			this->push(rhs.getUnit(i)->clone());
 	}
 	return *this;
 }

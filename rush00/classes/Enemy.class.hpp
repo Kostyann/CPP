@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Enemy.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abulakh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/06 13:00:08 by abulakh           #+#    #+#             */
-/*   Updated: 2019/04/06 13:00:10 by abulakh          ###   ########.fr       */
+/*   Created: 2019/04/06 13:29:25 by abulakh           #+#    #+#             */
+/*   Updated: 2019/04/06 13:29:27 by abulakh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ENEMY_CLASS_HPP
+# define ENEMY_CLASS_HPP
 
-#include "Visual.class.hpp"
+# include "Entity.class.hpp"
+# include "Bullet.class.hpp"
 
-int main(void)
+class Enemy : public Entity
 {
-	system("printf '\e[8;60;220t'");
-	Visual game;
-	srand(time(NULL));
-	game.game_mode();
-	return(0);
-}
+	public:
+		Enemy(std::string name, unsigned int);
+		Enemy(void);
+		Enemy(Enemy const & src);
+		~Enemy(void);
+
+		Enemy &	operator=(Enemy const & rhs);
+
+		std::string model;
+		Bullet *buls;
+};
+
+#endif
+
