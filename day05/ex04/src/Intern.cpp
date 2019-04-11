@@ -16,7 +16,7 @@ Intern::Intern(void){}
 
 Intern::Intern(Intern const &src){*this = src;}
 
-Intern &	Intern::operator=(Intern const &rhs){return *this;}
+Intern &	Intern::operator=(Intern const &){return *this;}
 
 Intern::~Intern(){return;}
 

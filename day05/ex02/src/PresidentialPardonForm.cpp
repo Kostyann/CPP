@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src){*this = src;}
 
-PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
+PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const &)
 {
 	return *this;
 }

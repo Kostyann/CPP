@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src){*this = src;}
 
-RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
+RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &)
 {
 	return *this;
 }

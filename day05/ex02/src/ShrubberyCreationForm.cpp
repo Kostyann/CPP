@@ -17,7 +17,7 @@ AForm("ShrubberyCreationForm", 145, 137), target_(target){}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src){*this = src;}
 
-ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const &)
 {
 	return *this;
 }
