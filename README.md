@@ -1,2 +1,3 @@
-# C++ Bootcamp
-Two weeks intensive course on C++. Classes, inheritance, overload of methods and operators, references, exceptions, C++ casts, templates.
+# Subjects
+
+[day00](https://github.com/Kostyann/CPP/blob/master/day00/Subject%20d00.pdf)
